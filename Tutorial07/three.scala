@@ -11,9 +11,12 @@
     def deposit(a:Double)=this.balance+a
     
     def transfer(a:Account,b:Double)={
-        this.balance=this.withdraw(b)
-        a.balance=a.deposit(b)
-       
+        if(b>this.balance){
+          println("No sufficient funds")
+        }else{
+          this.balance=this.withdraw(b)
+          a.balance=a.deposit(b)
+        }
     }
 }
 object q3 extends App{
