@@ -1,4 +1,5 @@
 class Rational(x:Int,y:Int){
+    require(y>0,"denominator can't be equal to zero")
     private def gcd(x:Int,y:Int):Int=if(y==0) x else gcd(y,x%y)
     def numer=x/gcd(x,y)
     def denom=y/gcd(x,y)
